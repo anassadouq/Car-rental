@@ -46,7 +46,8 @@
                                 . ' jours'
                             }}
                             </td>
-                            <td>{{ $reservation->voiture->prixJ * (\Carbon\Carbon::parse($reservation->dateD)
+                            <td>
+                                {{ $reservation->voiture->prixJ * (\Carbon\Carbon::parse($reservation->dateD)
                                 ->diffInDays(\Carbon\Carbon::parse($reservation->dateF)) +1) }} DH
                             </td>
                             <td>

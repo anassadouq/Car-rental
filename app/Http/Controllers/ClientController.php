@@ -8,9 +8,11 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $clients = Client::all();
+        $clients = Client::orderBy('created_at', 'desc')->get();
+    
         return view('client.index', compact('clients'));
     }
+    
 
     public function create()
     {

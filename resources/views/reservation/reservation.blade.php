@@ -95,36 +95,40 @@
             <tbody style="text-align: center">
                 @foreach($reservations as $reservation)
                     <tr>
+                        <td><b>Marque :</b> {{$reservation->voiture->marque}}</td>
                         <td><b>Matricule :</b> {{$reservation->voiture->matricule}}</td>
-                        <td><b>Coût par jour :</b> {{$reservation->voiture->prixJ}} DH</td>
                     </tr>
                     <tr>
                         <td><b>Puissance :</b> {{$reservation->voiture->puissance}}</td>
-                        <td><b>Carburant :</b> {{$reservation->voiture->carburant}}</td>
+                        <td><b>Modèle :</b> {{$reservation->voiture->modele}}</td>
                     </tr>
                     <tr>
-                        <td><b>Marque :</b> {{$reservation->voiture->marque}}</td>
-                        <td><b>Modèle :</b> {{$reservation->voiture->modele}}</td>
+                        <td><b>Coût par jour :</b> {{$reservation->voiture->prixJ}} DH</td>
+                        <td><b>Carburant :</b> {{$reservation->voiture->carburant}}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table><br>
 
         <table class="text-center my-3" style="width:50%">
+        @php
+            $totalTTC = $reservation->voiture->prixJ * (\Carbon\Carbon::parse($reservation->dateD)->diffInDays(\Carbon\Carbon::parse($reservation->dateF)) + 1);
+            $tva = $totalTTC * 0.20;
+        @endphp
             <tr>
                 <th style="background-color:#F0F0F0" colspan=2 width="40%">TOTAL HT en DHs</th>
                 <th>
-                    {{ $totalHT = $reservation->voiture->prixJ * (\Carbon\Carbon::parse($reservation->dateD)->diffInDays(\Carbon\Carbon::parse($reservation->dateF)) + 1) }} DH
+                    {{ $totalTTC - $tva }} DH
                 </th>
             </tr>
             <tr>
                 <th style="background-color:#F0F0F0">TVA</th>
                 <th style="background-color:#F0F0F0">20%</th>
-                <th>{{ $tva = $totalHT * 0.20 }} DH</th>  
+                <th>{{ $tva }} DH</th>
             </tr>  
             <tr>
                 <th style="background-color:#F0F0F0" colspan=2>Total TTC en DHs</th>
-                <th>{{ $totalTTC = $totalHT + $tva }} DH</th>
+                <th>{{ $totalTTC }} DH</th>
             </tr>
         </table><br>
 

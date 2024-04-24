@@ -99,6 +99,7 @@
                         dom: 'Blfrtip',
                         lengthChange: false, // disable length change dropdown
                         paging: false, // disable pagination
+                        ordering: false, // disable sorting for all columns
                         buttons: [{
                             extend: 'collection',
                             text: 'Export',

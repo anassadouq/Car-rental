@@ -82,7 +82,7 @@
             <div class="row">
                 @foreach ($voitures as $voiture)
                     @if($voiture->reservee == "Non")
-                        <div class="mx-4 my-2 card" style="width: 17rem;">
+                        <div class="mx-4 my-2 card" style="width: 12rem;">
                             <img src="/images/{{$voiture['image']}}" class="card-img-top">
                             <div class="card-body">
                                 <p class="card-text">{{$voiture->marque}}</p>
