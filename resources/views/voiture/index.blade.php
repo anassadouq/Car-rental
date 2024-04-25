@@ -10,6 +10,24 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         </head>
         <body>
+            <style>
+                .card {
+                    width: 12rem;
+                }
+                @media only screen and (max-width: 768px) {
+                    .col-2 {
+                        width: 100%;
+                    }
+
+                    .col-10 {
+                        width: 100%;
+                    }
+
+                    .card {
+                        width: 18rem;
+                    }
+                }
+            </style>
             <div>
                 <h1 class="text-center">VOITURES</h1>
                 <a href="{{route('voiture.create')}}" >
@@ -19,11 +37,11 @@
                 </a>
                 <div class="row">
                     @foreach ($voitures as $voiture)
-                        <div class="mx-4 my-2 card" style="width: 13rem;">
+                        <div class="mx-4 my-2 card">
                             <img src="/images/{{$voiture['image']}}" class="card-img-top">
                             <div class="card-body">
-                                <p class="card-text">{{$voiture->marque}}</p>
-                                <p>Modèle  : {{$voiture->modele}}</p>
+                                <b class="card-text">{{$voiture->marque}}</b>
+                                <p>{{$voiture->carburant}}</p>
                                 <p>Prix : {{$voiture->prixJ}} DH/jr</p>
                                 @if($voiture->reservee == "Oui")
                                     <p style="color:green; font-weight:bold">Réserver</p>

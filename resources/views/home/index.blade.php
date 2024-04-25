@@ -1,8 +1,38 @@
 @extends('layouts.app')
 @section('content')
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <style>
+        @media only screen and (max-width: 768px) {
+            .table {
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            .table th,
+            .table td {
+                font-size: 0.8rem;
+            }
+
+            .col-6 {
+                width: 100%;
+                margin-top:10px;
+            }
+
+            .my-4 {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
     <div class="row my-4 mx-3">
-        <div class="col-5 card">
+        <div class="col-6 card">
             <div class="card-header text-center bg-primary text-light" style="font-weight:bold;">VOITURES </div>
             <div class="card-body">
                 <div class="row">
@@ -18,7 +48,7 @@
             </div>
         </div>
 
-        <div class="col-5 card mx-5">
+        <div class="col-6 card">
             <div class="card-header text-center text-light" style="background-color:#7F00FF; font-weight:bold;">CLIENTS</div>
             <div class="card-body">
                 <div class="row">
@@ -82,11 +112,11 @@
             <div class="row">
                 @foreach ($voitures as $voiture)
                     @if($voiture->reservee == "Non")
-                        <div class="mx-4 my-2 card" style="width: 12rem;">
+                        <div class="mx-4 my-2 card" style="width: 13rem;">
                             <img src="/images/{{$voiture['image']}}" class="card-img-top">
                             <div class="card-body">
-                                <p class="card-text">{{$voiture->marque}}</p>
-                                <p>Modèle  : {{$voiture->modele}}</p>
+                                <b class="card-text">{{$voiture->marque}}</b>
+                                <p>{{$voiture->carburant}}</p>
                                 <p>Prix : {{$voiture->prixJ}} DH/jr</p>
                             </div>
                         </div>

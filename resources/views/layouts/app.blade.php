@@ -18,6 +18,23 @@
     </head>
 
     <body style="background-color:#E8E8E8">
+    
+        <style>
+            @media only screen and (max-width: 768px) {
+                .row {
+                    flex-direction: column;
+                }
+
+                .col-2 {
+                    width: 100%;
+                }
+
+                .col-10 {
+                    width: 100%;
+                }
+            }
+        </style>
+
         <div class="row">
             <div class="col-2 bg-dark text-light">
                 <ul type="none">

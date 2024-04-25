@@ -10,6 +10,32 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         </head>
         <body>
+
+            <style>
+                @media only screen and (max-width: 768px) {
+                    .row {
+                        flex-direction: column;
+                    }
+
+                    .table {
+                        width: 100%;
+                        overflow-x: auto;
+                    }
+
+                    .table th,
+                    .table td {
+                        font-size: 0.6rem;
+                    }
+
+                    .col-2 {
+                        width: 100%;
+                    }
+
+                    .col-10 {
+                        width: 100%;
+                    }
+                }
+            </style>
             <div class="container">
                 <h1 class="text-center">RESERVATIONS</h1>
 
@@ -18,7 +44,7 @@
                         <span class="material-symbols-outlined">add</span>
                     </button>
                 </a>
-                <table class="text-center" width="100%" id="myTable">
+                <table class="table text-center" width="100%" id="myTable">
                     <thead style="background-color:#B0B0B0">
                         <tr>
                             <th>Client</th>
