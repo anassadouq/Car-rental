@@ -12,6 +12,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/client', ClientController::class);
     Route::resource('/voiture', VoitureController::class);
     Route::resource('/reservation', ReservationController::class);
-    Route::get('/reservation/{clientId}/pdf', [ReservationController::class, 'reservation'])->name('reservation.pdf');});
+    Route::get('/reservation/{reservationId}/pdf', [ReservationController::class, 'reservation'])->name('reservation.pdf');});
 
 Auth::routes();

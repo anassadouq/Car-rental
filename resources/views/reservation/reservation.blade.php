@@ -33,7 +33,7 @@
 
     <header>
         <div class="client">
-            <img src="https://img.freepik.com/vecteurs-libre/modele-logo-concessionnaire-automobile-degrade_23-2149334632.jpg?w=740&t=st=1713821612~exp=1713822212~hmac=ef73f154019b081288149d26b68875c05790918aca2bf225b3db34f7527eb810" width="120px">
+            <h4>LOGO</h4>
         </div>
         <div class="agence">
             <p>RENTALMARRAKECH SARL AU</p>
@@ -42,14 +42,12 @@
         </div>
     </header><br><br><br><br><br><br><br><br>
     
-    @foreach($reservations as $reservation)
         <div class="client">
             <h3>Facture N: {{$reservation->id}}</h3>
         </div>
         <div class="agence">
             <h3>Date de facture : {{ date('d/m/Y') }}</h3>
         </div><br><br>
-    @endforeach
 
     <div>
 
@@ -58,7 +56,6 @@
                 <th colspan="3" style="text-align: center; background-color:#F0F0F0">INFORMATIONS RESERVATION</th>
             </thead>
             <tbody style="text-align: center">
-                @foreach($reservations as $reservation)
                     <td><b>Date de début :</b> {{ \Carbon\Carbon::parse($reservation->dateD)->format('d/m/Y') }}</td>
                     <td><b>Date de fin :</b> {{ \Carbon\Carbon::parse($reservation->dateF)->format('d/m/Y') }}</td>
                     <td><b>Durée :</b> 
@@ -68,7 +65,6 @@
                             . ' jours'
                         }}
                     </td>
-                @endforeach
             </tbody>
         </table><br>
 
@@ -93,7 +89,6 @@
                 <th colspan="2" style="text-align: center; background-color:#F0F0F0">INFORMATIONS VOITURE</th>
             </thead>
             <tbody style="text-align: center">
-                @foreach($reservations as $reservation)
                     <tr>
                         <td><b>Marque :</b> {{$reservation->voiture->marque}}</td>
                         <td><b>Matricule :</b> {{$reservation->voiture->matricule}}</td>
@@ -106,7 +101,6 @@
                         <td><b>Coût par jour :</b> {{$reservation->voiture->prixJ}} DH</td>
                         <td><b>Carburant :</b> {{$reservation->voiture->carburant}}</td>
                     </tr>
-                @endforeach
             </tbody>
         </table><br>
 

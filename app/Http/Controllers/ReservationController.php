@@ -73,16 +73,14 @@ class ReservationController extends Controller
         return redirect()->route('reservation.index')->with('success', 'Le détail de facture a été supprimé avec succès.');
     }
 
-    public function reservation($clientId)
+    public function reservation($reservationId)
     {
-        $client = Client::findOrFail($clientId);
-        $reservations = Reservation::where('id_client', $clientId)->with('voiture')->get();
+        $reservation = Reservation::findOrFail($reservationId);
+        $client = $reservation->client;
+        $voiture = $reservation->voiture;
     
-        $pdf = PDF::loadView('reservation.reservation', [
-            'reservations' => $reservations,
-            'client' => $client
-        ]);
+        $pdf = PDF::loadView('reservation.reservation', compact('reservation', 'client', 'voiture'));
     
-        return $pdf->download('reservation-' . $clientId . '.pdf');
-    }
+        return $pdf->download('reservation-' . $reservation->id . '.pdf');
+    }       
 }

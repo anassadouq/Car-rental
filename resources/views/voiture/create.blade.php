@@ -68,7 +68,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Réserver :</label>
-                        <input type="radio" name="reservee" value="Oui" class="mx-1"> Oui
+                        <input type="radio" name="reservee" value="Oui"> Oui
                         <input type="radio" name="reservee" value="Non"> Non
                     </div>
                     <button type="submit" class="form-control btn btn-primary">Créer Voiture</button>

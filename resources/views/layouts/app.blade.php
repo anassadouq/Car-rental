@@ -13,8 +13,6 @@
         <link rel="dns-prefetch" href="//fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
-        <!-- Scripts -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
 
     <body style="background-color:#E8E8E8">
@@ -38,6 +36,11 @@
         <div class="row">
             <div class="col-2 bg-dark text-light">
                 <ul type="none">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link my-4">
+                            <h4 style="font-weight:bold">LOGO</h4>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="/" class="nav-link my-4">
                             <span class="material-symbols-outlined">table</span>    
