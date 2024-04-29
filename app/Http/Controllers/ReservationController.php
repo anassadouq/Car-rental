@@ -8,11 +8,14 @@ use App\Models\Client;
 use App\Models\Voiture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class ReservationController extends Controller
 {
     public function index()
     {
+        $today = Carbon::today();
+
         $reservations = Reservation::with('client', 'voiture')->latest()->get();
         $clients = Client::all();
         $voitures = Voiture::all();

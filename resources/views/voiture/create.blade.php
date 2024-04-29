@@ -66,12 +66,7 @@
                         <input type="radio" name="carburant" value="Essence"> Essence
                         <input type="radio" name="carburant" value="Hybride"> Hybride
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Réserver :</label>
-                        <input type="radio" name="reservee" value="Oui"> Oui
-                        <input type="radio" name="reservee" value="Non"> Non
-                    </div>
-                    <button type="submit" class="form-control btn btn-primary">Créer Voiture</button>
+                    <button type="submit" class="form-control btn btn-primary">Ajouter</button>
                 </form>
             </div>
         </div>

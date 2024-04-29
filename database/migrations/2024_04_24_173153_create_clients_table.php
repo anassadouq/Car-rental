@@ -14,7 +14,6 @@ return new class extends Migration
             $table->string('permis');
             $table->string('nom');
             $table->string('prenom');
-            $table->string('sexe');
             $table->string('adresse');
             $table->string('tel');
             $table->timestamps();

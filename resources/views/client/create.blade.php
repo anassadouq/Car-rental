@@ -53,11 +53,6 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Sexe :</label>
-                        <input type="radio" name="sexe" value="F" class=" my-3"> Femme
-                        <input type="radio" name="sexe" value="H"> Homme
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Adresse :</label>
                         <textarea name="adresse" cols="60" rows="1" placeholder="Adresse Client" class="form-control"></textarea>
                     </div>
@@ -65,7 +60,7 @@
                         <label class="form-label">Téléphone :</label>
                         <input type="text" placeholder="Téléphone Client" name="tel" class="form-control">
                     </div>
-                    <button type="submit" class="form-control btn btn-primary">Créer Client</button>
+                    <button type="submit" class="form-control btn btn-primary">Ajouter</button>
                 </form>
             </div>
         </div>

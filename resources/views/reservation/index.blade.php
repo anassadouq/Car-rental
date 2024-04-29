@@ -43,10 +43,6 @@
                     input {
                         font-size:10px;
                     }
-
-                    .btn {
-                        font-size:9px;
-                    }
                 }
             </style>
 
@@ -57,7 +53,9 @@
                     <input type="date" name="filterDateD" id="filterDateDInput">
                 <b>Date de fin : </b>
                     <input type="date" name="filterDateF" id="filterDateFInput">
-                <button onclick="calculateReste()" class="btn btn-success mx-2">Filtrer</button><br>
+                <button onclick="calculateReste()" class="btn btn-success mx-2">
+                    <span class="material-symbols-outlined">filter_alt</span>
+                </button><br>
 
                 <a href="{{route('reservation.create')}}" >
                     <button class="btn btn-primary my-3" style="width:85px">
@@ -79,10 +77,13 @@
                     </thead>
                     <tbody id="reservationsBody">
                         @foreach ($reservations as $reservation)
-                            <tr>
+                            <tr class="{{ \Carbon\Carbon::today()->between($reservation->dateD, $reservation->dateF) ? 'bg-success text-light' : '' }}">
                                 <td>{{ $reservation->client->prenom }} {{ $reservation->client->nom }}</td>
                                 <td>{{ $reservation->client->tel }}</td>
-                                <td>{{ $reservation->voiture->marque }}</td>
+                                <td>
+                                    {{ $reservation->voiture->marque  }} <br>
+                                    {{ $reservation->voiture->matricule  }}
+                                </td>
                                 <td>{{ \Carbon\Carbon::parse($reservation->dateD)->format('d/m/Y') }}</td>
                                 <td>{{ \Carbon\Carbon::parse($reservation->dateF)->format('d/m/Y') }}</td>
                                 <td>

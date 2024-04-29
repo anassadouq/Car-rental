@@ -24,7 +24,7 @@
 
                     .table th,
                     .table td {
-                        font-size: 0.6rem;
+                        font-size: 0.7rem;
                     }
 
                     .col-2 {
@@ -50,7 +50,6 @@
                             <th>Cin</th>
                             <th>Permis</th>
                             <th>Nom</th>
-                            <th>Sexe</th>
                             <th>Adresse</th>
                             <th>Téléphone</th>
                             <th>Actions</th>
@@ -62,7 +61,6 @@
                             <td>{{ $client->cin }}</td>
                             <td>{{ $client->permis }}</td>
                             <td>{{ $client->prenom }} {{ $client->nom }}</td>
-                            <td>{{ $client->sexe }}</td>
                             <td>{{ $client->adresse }}</td>
                             <td>{{ $client->tel }}</td>
                             <td>

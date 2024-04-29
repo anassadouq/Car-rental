@@ -43,7 +43,7 @@
                         <label class="form-label">Permis :</label>
                         <input type="text" placeholder="Permis Client" name="permis" value="{{ $client->permis }}" class="form-control">
                     </div>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-6">
                             <label class="form-label">Prénom :</label>
                             <input type="text" placeholder="Prénom Client" name="prenom" value="{{ $client->prenom }}" class="form-control">
@@ -54,11 +54,6 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Sexe :</label>
-                        <input type="radio" name="sexe" value="F" class="mx-1 my-3" {{ $client->sexe == 'F' ? 'checked' : '' }}> Femme
-                        <input type="radio" name="sexe" value="H" {{ $client->sexe == 'H' ? 'checked' : '' }}> Homme
-                    </div>
-                    <div class="mb-3">
                         <label class="form-label">Adresse :</label>
                         <textarea name="adresse" cols="60" rows="1" placeholder="Adresse Client" class="form-control">{{ $client->adresse }}</textarea>
                     </div>
@@ -66,7 +61,7 @@
                         <label class="form-label">Téléphone :</label>
                         <input type="text" placeholder="Téléphone Client" name="tel" value="{{ $client->tel }}" class="form-control">
                     </div>
-                    <button type="submit" class="form-control btn btn-secondary">Edit Client</button>
+                    <button type="submit" class="form-control btn btn-secondary">Modifier</button>
                 </form>
             </div>
         </div>

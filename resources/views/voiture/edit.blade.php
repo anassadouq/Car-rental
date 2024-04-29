@@ -75,7 +75,7 @@
                         <input type="radio" name="reservee" value="Oui" {{ $voiture->reservee == 'Oui' ? 'checked' : '' }}> Oui
                         <input type="radio" name="reservee" value="Non" {{ $voiture->reservee == 'Non' ? 'checked' : '' }}> Non
                     </div>
-                    <button type="submit" class="form-control btn btn-secondary">Edit Voiture</button>
+                    <button type="submit" class="form-control btn btn-secondary">Modifier</button>
                 </form>
             </div>
         </div>

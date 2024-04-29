@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('puissance');
             $table->integer('prixJ');
             $table->string('carburant');
-            $table->string('reservee');
+            $table->string('reservee')->nullable();
             $table->timestamps();
         });
     }

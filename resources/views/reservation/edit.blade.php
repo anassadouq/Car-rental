@@ -46,7 +46,7 @@
                         <label class="form-label">Date Fin :</label>
                         <input type="date" name="dateF" value="{{ $reservation->dateF }}" class="form-control"/>
                     </div>
-                    <button type="submit" class="form-control btn btn-secondary">Edit reservation</button>
+                    <button type="submit" class="form-control btn btn-secondary">Modifier</button>
                 </form>
             </div>
         </div>

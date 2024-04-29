@@ -12,7 +12,7 @@
         <body>
             <style>
                 .card {
-                    width: 12rem;
+                    width: 14rem;
                 }
                 @media only screen and (max-width: 768px) {
                     .col-2 {
@@ -41,10 +41,12 @@
                             <img src="/images/{{$voiture['image']}}" class="card-img-top">
                             <div class="card-body">
                                 <b class="card-text">{{$voiture->marque}}</b>
-                                <p>{{$voiture->carburant}}</p>
+                                <p>{{$voiture->matricule}}</p>
+                                <p>Carburant : {{$voiture->carburant}}</p>
+                                <p>Puissance : {{$voiture->puissance}}</p>
                                 <p>Prix : {{$voiture->prixJ}} DH/jr</p>
                                 @if($voiture->reservee == "Oui")
-                                    <p style="color:green; font-weight:bold">Réserver</p>
+                                    <p style="color:green; font-weight:bold; font-size:17px;">Réserver</p>
                                 @endif 
                                 
                                 <form action="{{ route('voiture.destroy', $voiture->id) }}" method="POST" id="deleteForm{{ $voiture->id }}">

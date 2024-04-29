@@ -60,7 +60,7 @@
                         <label class="form-label">Date Fin :</label>
                         <input type="date" name="dateF" class="form-control"/>
                     </div>
-                    <button type="submit" class="form-control btn btn-primary">Créer Réservation</button>
+                    <button type="submit" class="form-control btn btn-primary">Ajouter</button>
                 </form>
             </div>
         </div>
