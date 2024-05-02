@@ -60,7 +60,7 @@
                         <label class="form-label">Téléphone :</label>
                         <input type="text" placeholder="Téléphone Client" name="tel" class="form-control">
                     </div>
-                    <button type="submit" class="form-control btn btn-primary">Ajouter</button>
+                    <button type="submit" class="form-control btn" style="background-color: #13274F; color:white;">Ajouter</button>
                 </form>
             </div>
         </div>

@@ -53,17 +53,17 @@
                     <input type="date" name="filterDateD" id="filterDateDInput">
                 <b>Date de fin : </b>
                     <input type="date" name="filterDateF" id="filterDateFInput">
-                <button onclick="calculateReste()" class="btn btn-success mx-2">
+                <button onclick="calculateReste()" class="btn btn-secondary mx-2">
                     <span class="material-symbols-outlined">filter_alt</span>
                 </button><br>
 
                 <a href="{{route('reservation.create')}}" >
-                    <button class="btn btn-primary my-3" style="width:85px">
+                    <button class="btn my-3" style="background-color: #13274F; color:white; width:85px;">
                         <span class="material-symbols-outlined">add</span>
                     </button>
                 </a>
                 <table class="table text-center" width="100%" id="myTable">
-                    <thead style="background-color:#B0B0B0">
+                    <thead style="background-color:#13274F; color:white;">
                         <tr>
                             <th>Client</th>
                             <th>Téléphone</th>
@@ -77,7 +77,7 @@
                     </thead>
                     <tbody id="reservationsBody">
                         @foreach ($reservations as $reservation)
-                            <tr class="{{ \Carbon\Carbon::today()->between($reservation->dateD, $reservation->dateF) ? 'bg-success text-light' : '' }}">
+                            <tr class="{{ \Carbon\Carbon::today()->between($reservation->dateD, $reservation->dateF) ? 'bg-secondary text-light' : '' }}">
                                 <td>{{ $reservation->client->prenom }} {{ $reservation->client->nom }}</td>
                                 <td>{{ $reservation->client->tel }}</td>
                                 <td>
@@ -94,8 +94,8 @@
                                 }}
                                 </td>
                                 <td>
-                                    {{ $reservation->voiture->prixJ * (\Carbon\Carbon::parse($reservation->dateD)
-                                    ->diffInDays(\Carbon\Carbon::parse($reservation->dateF)) +1) }} DH
+                                    {{ number_format($reservation->voiture->prixJ * (\Carbon\Carbon::parse($reservation->dateD)
+                                    ->diffInDays(\Carbon\Carbon::parse($reservation->dateF)) +1), 2, '.', ' ') }} DH
                                 </td>
                                 <td>
                                     <form action="{{ route('reservation.destroy', $reservation->id) }}" method="POST" id="deleteForm{{ $reservation->id }}">
@@ -167,18 +167,23 @@
                         var dateFin = new Date(rows[i].cells[4].innerText.split('/').reverse().join('-'));
 
                         if (dateDebut >= startDate && dateFin <= endDate) {
-                            var montant = rows[i].cells[6].innerText.replace(/[^0-9]/g, '');
-                            total += parseInt(montant, 10);
+                            var montantText = rows[i].cells[6].innerText; // Récupère le texte du montant directement
+                            var montant = parseFloat(montantText.replace(/[^0-9.]/g, '')); // Remplace tout ce qui n'est pas un chiffre ou un point
+                            total += montant;
 
-                            // Add the row to new body content
+                            // Ajoute la ligne au nouveau contenu du corps
                             newBodyContent += rows[i].outerHTML;
                         }
                     }
 
-                    // Update the table body and the total display
+                    // Format le total en utilisant 'fr-FR' pour que les milliers soient séparés par un espace
+                    var formattedTotal = total.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+                    // Met à jour le corps du tableau et l'affichage du total
                     document.getElementById('reservationsBody').innerHTML = newBodyContent;
-                    document.getElementById('totalAmountDisplay').innerText = total + ' DH';
+                    document.getElementById('totalAmountDisplay').innerText = formattedTotal + ' DH';
                 }
+
 
                 function confirmDelete(reservationId) {
                     if (confirm('Êtes-vous sûr de vouloir supprimer cette reservation ?')) {

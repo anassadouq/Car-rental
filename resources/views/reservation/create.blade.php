@@ -47,7 +47,7 @@
                         <select name="id_voiture" class="my-3" id="text">
                             @foreach($voitures as $voiture)
                                 @if($voiture->reservee =="Non")
-                                    <option value="{{ $voiture->id }}">{{ $voiture->marque }}</option>
+                                    <option value="{{ $voiture->id }}">{{ $voiture->marque }} {{ $voiture->matricule }}</option>
                                 @endif
                             @endforeach
                         </select>
@@ -60,7 +60,7 @@
                         <label class="form-label">Date Fin :</label>
                         <input type="date" name="dateF" class="form-control"/>
                     </div>
-                    <button type="submit" class="form-control btn btn-primary">Ajouter</button>
+                    <button type="submit" class="form-control btn" style="background-color: #13274F; color:white;">Ajouter</button>
                 </form>
             </div>
         </div>

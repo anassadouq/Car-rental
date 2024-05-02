@@ -31,7 +31,7 @@
             <div>
                 <h1 class="text-center">VOITURES</h1>
                 <a href="{{route('voiture.create')}}" >
-                    <button class="btn btn-primary my-3" style="width:85px">
+                    <button class="btn my-3" style="background-color: #13274F; color:white; width:85px;">
                         <span class="material-symbols-outlined">add</span>
                     </button>
                 </a>

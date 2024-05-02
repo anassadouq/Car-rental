@@ -36,9 +36,9 @@
             <h4>LOGO</h4>
         </div>
         <div class="agence">
-            <p>RENTALMARRAKECH SARL AU</p>
-            <p>ICE : 00144258120091</p>
-            <p>Av. Allal El Fassi BP 20154 Marrakech - Maroc</p>
+            <p>ENTREPRISE SARL AU</p>
+            <p>ICE : 000000000000000000</p>
+            <p>Av. Exemple RABAT - Maroc</p>
         </div>
     </header><br><br><br><br><br><br><br><br>
     
@@ -112,17 +112,17 @@
             <tr>
                 <th style="background-color:#F0F0F0" colspan=2 width="40%">TOTAL HT en DHs</th>
                 <th>
-                    {{ $totalTTC - $tva }} DH
+                    {{ number_format($totalTTC - $tva, 2, '.', ' ') }} DH
                 </th>
             </tr>
             <tr>
                 <th style="background-color:#F0F0F0">TVA</th>
                 <th style="background-color:#F0F0F0">20%</th>
-                <th>{{ $tva }} DH</th>
+                <th>{{ number_format($tva, 2, '.', ' ') }} DH</th>
             </tr>  
             <tr>
                 <th style="background-color:#F0F0F0" colspan=2>Total TTC en DHs</th>
-                <th>{{ $totalTTC }} DH</th>
+                <th>{{ number_format($totalTTC, 2, '.', ' ') }} DH</th>
             </tr>
         </table><br>
 
@@ -134,9 +134,9 @@
         </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <footer>
-            Ste RENTALMARRAKECH Av. Allal El Fassi - Marrakech - Maroc 
-            Tel : 06 50 50 21 05 / 
-            Fax : 05 22 62 36 36
+            Ste ENTREPRISE Av. Exemple - RABAT - Maroc 
+            Tel : 06 00 00 00 00  / 
+            Fax : 05 37 00 00 00 
         </footer>
 
     </div>

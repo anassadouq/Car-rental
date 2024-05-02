@@ -66,7 +66,7 @@
                         <input type="radio" name="carburant" value="Essence"> Essence
                         <input type="radio" name="carburant" value="Hybride"> Hybride
                     </div>
-                    <button type="submit" class="form-control btn btn-primary">Ajouter</button>
+                    <button type="submit" class="form-control btn" style="background-color: #13274F; color:white;">Ajouter</button>
                 </form>
             </div>
         </div>

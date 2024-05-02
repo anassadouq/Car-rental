@@ -40,12 +40,12 @@
                 <h1 class="text-center">CLIENTS</h1>
 
                 <a href="{{route('client.create')}}" >
-                    <button class="btn btn-primary my-3" style="width:85px">
+                    <button class="btn my-3" style="background-color: #13274F; color:white; width:85px;">
                         <span class="material-symbols-outlined">add</span>
                     </button>
                 </a>
                 <table width="90%" class="table text-center" id="myTable">
-                    <thead style="background-color:#B0B0B0">
+                    <thead style="background-color:#13274F; color:white;">
                         <tr>
                             <th>Cin</th>
                             <th>Permis</th>

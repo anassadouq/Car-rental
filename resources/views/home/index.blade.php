@@ -10,7 +10,7 @@
                 flex-direction: column;
             }
 
-            .col-6 {
+            .col {
                 width: 100%;
                 margin-top:10px;
             }
@@ -36,32 +36,48 @@
     </style>
 
     <div class="row my-4 mx-3">
-        <div class="col-6 card">
-            <div class="card-header text-center bg-primary text-light" style="font-weight:bold;">VOITURES </div>
+        <div class="col mx-2 card">
+            <div class="card-header text-center bg-primary text-light" style="font-weight:bold;">RESERVATIONS</div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-9">
-                        <h5 class="card-title text-center text-primary" style="font-size:40px; font-weight:bold;">{{ $voituresCount }}</h5>
+                        <h5 class="card-title text-center text-primary" style="font-size:40px; font-weight:bold;">{{ $reservationsCount }}</h5>
                     </div>
-                    <div class="col-3 text-primary">
-                        <a href="/voiture">
-                            <span class="material-symbols-outlined" style="font-size:60px; font-weight:bold">directions_car</span>
+                    <div class="col-3">
+                        <a href="/reservation">
+                            <span class="material-symbols-outlined text-primary" style="font-size:60px; font-weight:bold;">table_rows</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-6 card">
-            <div class="card-header text-center text-light" style="background-color:#7F00FF; font-weight:bold;">CLIENTS</div>
+        <div class="col mx-2 card">
+            <div class="card-header text-center bg-info text-light" style="font-weight:bold;">CLIENTS</div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-9">
-                        <h5 class="card-title text-center" style="font-size:40px; font-weight:bold; color:#7F00FF">{{ $clientsCount }}</h5>
+                        <h5 class="card-title text-center text-info" style="font-size:40px; font-weight:bold;"> {{ $clientsCount }}</h5>
                     </div>
                     <div class="col-3">
                         <a href="/client">
-                            <span class="material-symbols-outlined" style="font-size:60px; font-weight:bold; color:#7F00FF">supervisor_account</span>
+                            <span class="material-symbols-outlined text-info" style="font-size:60px; font-weight:bold">supervisor_account</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mx-2 card">
+            <div class="card-header text-center text-light" style="background-color:#7F00FF; font-weight:bold;">VOITURES</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">
+                        <h5 class="card-title text-center" style="font-size:40px; font-weight:bold; color:#7F00FF">{{ $voituresCount }}</h5>
+                    </div>
+                    <div class="col-3">
+                        <a href="/voiture">
+                            <span class="material-symbols-outlined" style="font-size:60px; font-weight:bold; color:#7F00FF">directions_car </span>
                         </a>
                     </div>
                 </div>
@@ -72,7 +88,7 @@
     <!-- Réservations Actuelles -->
     <div class="my-4">
         <div class="card mx-3">
-            <div class="card-header text-center">Réservations Actuelles</div>
+            <div class="card-header text-center text-light" style="background-color:#13274F;">Réservations Actuelles</div>
             <div class="card-body">
                 @if($reservations->isEmpty())
                     <p>Aucune réservation pour aujourd'hui.</p>
@@ -111,7 +127,7 @@
 
     <!-- voitures disponibles -->
     <div class="card mx-3">
-        <div class="card-header text-center">Voitures disponibles</div>
+        <div class="card-header text-center text-light" style="background-color:#13274F;">Voitures disponibles</div>
         <div class="card-body">
             <div class="row">
                 @foreach ($voitures as $voiture)

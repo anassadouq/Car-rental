@@ -34,7 +34,7 @@
         </style>
 
         <div class="row">
-            <div class="col-2 bg-dark text-light">
+            <div class="col-2 text-light" style="background-color:#13274F">
                 <ul type="none">
                     <li class="nav-item">
                         <a href="/" class="nav-link my-4">
@@ -49,7 +49,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link my-4" href="/client">
-                            <span class="material-symbols-outlined">person</span>    
+                            <span class="material-symbols-outlined">supervisor_account</span>    
                             CLIENTS
                         </a>
                     </li>
