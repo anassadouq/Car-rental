@@ -7,7 +7,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Location</title>
+        <title>LOCATION</title>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -84,7 +84,7 @@
                             <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <h5> 
                                     <span class="material-symbols-outlined">logout</span>
-                                    {{ __('Logout') }}
+                                    Se déconnecter
                                 </h5>
                             </a>
 
