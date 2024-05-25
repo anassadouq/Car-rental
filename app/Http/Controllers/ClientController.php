@@ -13,7 +13,6 @@ class ClientController extends Controller
         return view('client.index', compact('clients'));
     }
     
-
     public function create()
     {
         return view('client.create');
@@ -23,11 +22,6 @@ class ClientController extends Controller
     {
         Client::create($request->all());
         return to_route('client.index');
-    }
-
-    public function show(Client $client)
-    {
-        return view('client.show', compact('client'));
     }
 
     public function edit(Client $client)

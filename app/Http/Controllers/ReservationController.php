@@ -29,7 +29,7 @@ class ReservationController extends Controller
 
     public function create()
     {
-        $clients = Client::latest()->get(); // Correction ici, get() pour exécuter la requête
+        $clients = Client::latest()->get();
         $voitures = Voiture::all();
         return view('reservation.create', [
             'clients' => $clients,

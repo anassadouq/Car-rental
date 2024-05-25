@@ -38,11 +38,6 @@ class VoitureController extends Controller
         return redirect()->route('voiture.index');
     }
 
-    public function show(Voiture $voiture)
-    {
-        return view('voiture.show', compact('voiture'));
-    }
-
     public function edit(Voiture $voiture)
     {
         return view('voiture.edit', compact('voiture'));

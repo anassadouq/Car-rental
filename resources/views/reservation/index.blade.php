@@ -239,6 +239,6 @@
                     });
                 });
             </script>
-        </body=>
+        </body>
     </html>
 @endsection
