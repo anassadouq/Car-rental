@@ -42,7 +42,7 @@
                         <label class="form-label">Permis :</label>
                         <input type="text" placeholder="Permis Client" name="permis" class="form-control">
                     </div>
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-6">
                             <label class="form-label">Prénom :</label>
                             <input type="text" placeholder="Prénom Client" name="prenom" class="form-control">
