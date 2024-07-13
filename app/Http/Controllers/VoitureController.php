@@ -26,6 +26,7 @@ class VoitureController extends Controller
         $voiture->puissance = $request->puissance;
         $voiture->prixJ = $request->prixJ;
         $voiture->carburant = $request->carburant;
+        $voiture->reservee = $request->reservee;
 
         if ($request->hasFile('image')) {
             $voiture->image = $request->image->getClientOriginalName();

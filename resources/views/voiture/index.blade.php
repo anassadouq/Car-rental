@@ -47,7 +47,7 @@
                                 <p>Prix : {{$voiture->prixJ}} DH/jr</p>
                                 @if($voiture->reservee == "Oui")
                                     <p style="color:green; font-weight:bold; font-size:17px;">Réserver</p>
-                                @endif 
+                                @endif
                                 
                                 <form action="{{ route('voiture.destroy', $voiture->id) }}" method="POST" id="deleteForm{{ $voiture->id }}">
                                     @csrf
